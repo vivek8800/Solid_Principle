@@ -24,6 +24,7 @@ A class should have only one responsibility.
 
 The benefits of the Single Responsibility Principle (SRP) include:
 
+
 Improved Readability: Classes with a single responsibility are easier to understand.
 Easier Maintenance: Changes are less likely to cause unintended side effects.
 Enhanced Reusability: Well-defined responsibilities promote code reuse.
