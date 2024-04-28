@@ -80,6 +80,72 @@ int main() {
     return 0;
 }
 */
+//*************************************Solution*****************************
+
+#include<iostream>
+using namespace std;
+
+// Abstract base class for all types of vehicles
+class Vehicle
+{
+public:
+    virtual void start() = 0; // Start the vehicle
+    virtual void move() = 0;  // Move the vehicle
+};
+
+// Concrete class representing motorbikes
+class Motorbike : public Vehicle
+{
+protected:
+    bool isEngineOn;
+    int speed;
+
+public:
+    Motorbike() : isEngineOn(false), speed(0) {}
+
+    // Start the engine
+    void start() 
+    {
+        isEngineOn = true;
+        cout << "Engine is On!!!" << endl;
+    }
+
+    // Accelerate the motorbike
+    void move()
+    {
+        speed += 20;
+        cout << "Speed of Motorbike is: " << speed << " km/h" << endl;
+    }
+};
+
+// Concrete class representing bicycles
+class Bicycle : public Vehicle
+{
+public:
+    // Bicycles do not have engines, so this method is not applicable
+    void start() 
+    {
+        cerr << "Error: Bicycles do not have engines." << endl;
+    }
+
+    // Accelerate the bicycle by pedaling
+    void move() 
+    {
+        cout << "Pedaling to increase speed." << endl;
+    }
+};
+
+int main() {
+    // Example usage
+    Motorbike bike1;
+    bike1.start();
+    bike1.move();
+
+    Bicycle bike2;
+    bike2.move(); // Output: Pedaling to increase speed.
+
+    return 0;
+}
 
 
 /*
